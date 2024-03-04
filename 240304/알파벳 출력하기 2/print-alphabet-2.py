@@ -7,10 +7,11 @@ for i in range(n):
             print(" ", end = " ")
         else:
             print(chr(A), end = " ")
-            if chr(A) == 'Z':
+            A += 1  
+            if A > ord('Z'):
                 A = ord("A")
-            else:
-                A += 1
+
+                
 
 
             
