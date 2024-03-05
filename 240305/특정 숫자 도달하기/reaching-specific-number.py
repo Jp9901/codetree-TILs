@@ -2,7 +2,7 @@ arr = list(map(int,input().split()))
 arr2 = list()
 
 for ele in arr:
-    if ele == 260:
+    if ele >= 250:
         break
     arr2.append(ele)
 
