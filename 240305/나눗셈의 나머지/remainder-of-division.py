@@ -1,7 +1,7 @@
 a, b = map(int,input().split())
 arr = list()
 
-while a > 0:
+while a > 1:
     arr.append(a%b)
     a = a//b
 
@@ -12,4 +12,5 @@ for i in range(b):
         if i == ele:
             cnt += 1
     sum_val += cnt**2
+
 print(sum_val)
