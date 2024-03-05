@@ -6,4 +6,4 @@ for ele in arr:
         break
     arr2.append(ele)
 
-print(sum(arr2), sum(arr2)/len(arr2))
+print(f"{sum(arr2)} {sum(arr2)/len(arr2):.1f}")
