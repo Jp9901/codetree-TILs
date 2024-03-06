@@ -1,15 +1,22 @@
 n = int(input())
 
-arr = list()
+arr = [
+    [0 for _ in range(n)]
+    for _ in range(n)
+]
+
+num = 1
 for i in range(n):
-    arr1 = list(n*i+j+1 for j in range(n))
-    arr.append(arr1)
-
-
+    if i%2 == 0:
+        for j in range(n):
+            arr[i][j] = num
+            num += 1
+    else:
+        for j in range(n-1,-1,-1):
+            arr[i][j] = num
+            num += 1
+    
 for i in range(n):
     for j in range(n):
-        if j%2 == 0:
-            print(arr[n-1-j][i], end= " ")
-        else:
-            print(arr[n-1-j][n-1-i], end = " ")
+        print(arr[n-1-j][n-1-i], end= " ")
     print()
