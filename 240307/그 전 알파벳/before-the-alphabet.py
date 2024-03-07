@@ -1,3 +1,7 @@
-ch = ord(input())
+ch = input()
 
-print(chr(ch-1))
+arr = list(
+    chr(i) for i in range(ord('a'),ord('z')+1)
+)
+
+print(arr[arr.index(ch)-1])
