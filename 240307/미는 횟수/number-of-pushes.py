@@ -1,13 +1,13 @@
 A = input()
 B = input()
 
-n = len(A)
+len_A = len(A)
 
-cnt = 0
-for i in range(n-1):
-    A = A[1:]+A[0]
+n = 0
+for i in range(len_A):
+    A = A[len_A-1]+A[:len_A-1]
     if A == B:
-        cnt=i+1
+        n=i+1
         break
 
-print(-1 if cnt==0 else cnt)
+print(-1 if n==0 else n)
