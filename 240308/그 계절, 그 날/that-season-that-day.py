@@ -24,11 +24,19 @@ def season(Y,M,D):
             return "Fall"
     
     else:
-
-        if Y%4 == 0  and Y%100 == 0 and Y%400 ==0:
+        if Y%4 == 0:
+            if Y%100 == 0:
+                if Y%400 ==0:
+                    if D > 29:
+                        return -1
+                    return "Winter"
+                if D>28:
+                    return -1
+                return "Winter"
             if D > 29:
                 return -1
             return "Winter"
+
         else:
             if D>28:
                 return -1
