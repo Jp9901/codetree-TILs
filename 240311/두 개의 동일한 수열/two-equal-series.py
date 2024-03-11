@@ -1,7 +1,10 @@
 n = int(input())
 
-A = list(map(int, input().split())).sort()
-B = list(map(int, input().split())).sort()
+A = list(map(int, input().split()))
+B = list(map(int, input().split()))
+
+A.sort()
+B.sort()
 
 if A == B:
     print("Yes")
