@@ -21,6 +21,5 @@ min_idx = 0
 for i in range(len(rain)):
     if rain_date[min_idx] > rain_date[i]:
         min_idx = i
-        print(min_idx)
 
 print(f"{rain[min_idx].date} {rain[min_idx].day} {rain[min_idx].weather}" )
