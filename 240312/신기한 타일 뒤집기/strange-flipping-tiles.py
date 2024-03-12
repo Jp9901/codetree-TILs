@@ -21,5 +21,5 @@ for i in range(n):
 
 cnt_wh = tile.count(1)
 cnt_bl = tile.count(-1)
-
+print(tile)
 print(cnt_wh,cnt_bl, sep = " " )
