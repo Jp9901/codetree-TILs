@@ -7,8 +7,8 @@ sum_val = 0
 for i in range(n):
     sum_val += int(arr[i][0])
 
-tile = [0 for _ in range(2*sum_val+1)]
-pos = sum_val
+tile = [0 for _ in range(4*sum_val+1)]
+pos = 2*sum_val
 
 for i in range(n):
     x = int(arr[i][0])
@@ -21,5 +21,5 @@ for i in range(n):
 
 cnt_wh = tile.count(1)
 cnt_bl = tile.count(-1)
-print(tile)
+
 print(cnt_wh,cnt_bl, sep = " " )
