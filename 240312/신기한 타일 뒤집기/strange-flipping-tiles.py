@@ -3,13 +3,15 @@ arr =[
     input().split() for _ in range(n)   
 ]
 
-sum_val = 0
+# 타일 개수 및 처음 위치 지정
+num = 0
 for i in range(n):
-    sum_val += int(arr[i][0])
+    num += int(arr[i][0])
 
-tile = [0 for _ in range(4*sum_val+1)]
-pos = 2*sum_val
+tile = [0 for _ in range(4*num+1)]
+pos = 2*num
 
+# 타일 뒤집기
 for i in range(n):
     x = int(arr[i][0])
     if arr[i][1] == 'R':
@@ -19,6 +21,7 @@ for i in range(n):
         tile[pos: (pos-x):-1] = [1 for _ in range(x)] # white
         pos = pos - x + 1 
 
+# 타일 색 개수
 cnt_wh = tile.count(1)
 cnt_bl = tile.count(-1)
 
