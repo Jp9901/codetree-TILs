@@ -8,21 +8,27 @@ num = 0
 for i in range(n):
     num += int(arr[i][0])
 
-tile = [0 for _ in range(4*num+1)]
+tile = ["empty" for _ in range(4*num+1)]
 pos = 2*num
 
 # 타일 뒤집기
 for i in range(n):
     x = int(arr[i][0])
+
     if arr[i][1] == 'R':
-        tile[pos:(pos+x+1)] = [-1 for _ in range(x)] # black
-        pos = pos + (x-1)
+        for _ in range(x):
+            tile[pos] = 'black'
+            pos += 1
+        else:
+            pos = pos - 1 # 마지막에는 움직이지 않으므로 전 위치로
     else:
-        tile[pos: (pos-x):-1] = [1 for _ in range(x)] # white
-        pos = pos - x + 1 
+        for _ in range(x):
+            tile[pos] = 'white'
+            pos -= 1
+        else:
+            pos = pos + 1 # 마지막에는 움직이지 않으므로 전 위치로
 
 # 타일 색 개수
-cnt_wh = tile.count(1)
-cnt_bl = tile.count(-1)
-
+cnt_wh = tile.count('white')
+cnt_bl = tile.count('black')
 print(cnt_wh,cnt_bl, sep = " " )
