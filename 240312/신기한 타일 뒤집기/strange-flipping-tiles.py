@@ -17,7 +17,7 @@ for i in range(n):
         pos = pos + (x-1)
     else:
         tile[pos: (pos-x):-1] = [1 for _ in range(x)] # white
-        pos = pos - (x-1)
+        pos = pos - x
 
 cnt_wh = tile.count(1)
 cnt_bl = tile.count(-1)
