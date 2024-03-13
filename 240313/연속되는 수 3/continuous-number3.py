@@ -4,7 +4,7 @@ arr =[
     int(input()) for _ in range(N)
 ]
 
-cnt = 0
+cnt = 1
 tmp = 1
 
 for i in range(N):
