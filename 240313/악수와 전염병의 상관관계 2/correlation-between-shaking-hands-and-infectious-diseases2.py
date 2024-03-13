@@ -10,7 +10,7 @@ dev[P] = 1
 
 cnt = [0 for _ in range(N+1)]
 for i, x, y in arr:
-    if (dev[x]==1 and cnt[x]<K) or (dev[y]==1 and cnt[y]<K):
+    if (dev[x]==1 and cnt[x]<=K) or (dev[y]==1 and cnt[y]<=K):
         dev[x] = 1
         cnt[x] += 1
         dev[y] = 1
