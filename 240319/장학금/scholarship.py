@@ -9,6 +9,6 @@ if mid<90:
 elif (fin<90):
     print(0)
 elif (90<=fin & fin<95):
-    print(5)
+    print(50000)
 elif fin>=95:
-    print(10)
+    print(10000)
