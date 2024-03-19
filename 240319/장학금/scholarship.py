@@ -11,4 +11,4 @@ elif (fin<90):
 elif (90<=fin & fin<95):
     print(50000)
 elif fin>=95:
-    print(10000)
+    print(100000)
