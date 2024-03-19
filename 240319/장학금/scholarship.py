@@ -10,5 +10,5 @@ elif mid>=90 & (fin<90):
     print(0)
 elif mid>=90 & (90<=fin & fin<95):
     print(5)
-else:
+elif mid>=90 & fin>=95:
     print(10)
