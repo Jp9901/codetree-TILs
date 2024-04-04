@@ -5,7 +5,6 @@ def check_y(Y):
         return True
     elif Y%4==0 and Y%100==0:
         return False
-
     elif Y%4==0:
         return True
     else:
@@ -15,10 +14,9 @@ def check_y(Y):
 def check(Y,M,D):
     list_30=[4,6,9,11]
     
-
     if (M in list_30)and M>30:
         return True
-    elif  (M==2)and check_y and M>29:
+    elif  (M==2)and check_y(Y) and M>29:
         return True
 
     elif  (M==2)and M>28:
