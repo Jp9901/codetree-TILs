@@ -55,5 +55,5 @@ for i in range(1,min(len(A_move),len(B_move))):
     if A_move[i] == B_move[i]:  
         print(i)
         break
-    else:
+    elif i==(min(len(A_move),len(B_move))-1):
         print(-1)
