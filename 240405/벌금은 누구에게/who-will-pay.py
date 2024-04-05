@@ -16,10 +16,14 @@ def check(dic):
 
 
 
-
+aws=-1
 for _ in range(M):
     x=int(input())
     dic[x]+=1
     if check(dic):
-        print(check(dic))
+        aws=check(dic)
+        print(aws)
         break
+
+if aws==-1:
+    print(-1)
