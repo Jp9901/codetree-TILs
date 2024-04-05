@@ -51,7 +51,9 @@ for direct, time in B:
 #################################
 #print(B_move)
 
-for i in range(1,max(len(A_move),len(B_move))):
+for i in range(1,min(len(A_move),len(B_move))):
     if A_move[i] == B_move[i]:  
         print(i)
         break
+    else:
+        print(-1)
