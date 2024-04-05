@@ -13,4 +13,4 @@ for i in range(1,N):
         aws=max(aws,cnt)
         cnt=1
 
-print(aws)
+print(max(aws,cnt))
