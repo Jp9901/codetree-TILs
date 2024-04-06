@@ -18,7 +18,7 @@ for all in all:                         #처음 2개의 인덱스
         if (cnt > (L-l)) and (L!=(k-L-l)and l!=(k-L-l)):
             cnt=(L-l)
 
-
-
-#print(target)
-print(cnt)
+if cnt>5000:
+    print(-1)
+else:
+    print(cnt)
