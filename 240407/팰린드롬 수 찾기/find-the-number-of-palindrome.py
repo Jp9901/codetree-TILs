@@ -1,7 +1,7 @@
 def check(k):
     number=list(map(int,str(k)))
     if len(number)%2==0:   #짝수일때
-        a=len(number)//2
+        a=len(number)/2
         for i in range(a):
             if number[i]!=number[-(i+1)]:
                 return False
