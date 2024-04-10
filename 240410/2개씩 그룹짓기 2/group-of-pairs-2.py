@@ -7,7 +7,7 @@ numbers=list(map(int,input().split()))
 numbers.sort()
 
 value=sys.maxsize
-for i in range(0,len(numbers)-3):
-    value=min(value,abs(numbers[i]-numbers[i+3]))
+for i in range(0,len(numbers)-n):
+    value=min(value,abs(numbers[i]-numbers[i+n]))
 
 print(value)
