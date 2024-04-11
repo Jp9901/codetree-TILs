@@ -20,4 +20,9 @@ for a in all:
             cnt+=1
     aws=max(cnt,aws)
 
-print(aws)
+
+
+if sum(move)<m:
+    print(0)
+else:
+    print(aws)
