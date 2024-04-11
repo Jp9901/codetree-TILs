@@ -17,9 +17,9 @@ target[0]='4'
 
 for i in range(2,n,2):
     if target[i-1]=='-':
-        target[i]=1
+        target[i]='1'
     else:
-        target[i]=4
+        target[i]='4'
 
     
 value=4
