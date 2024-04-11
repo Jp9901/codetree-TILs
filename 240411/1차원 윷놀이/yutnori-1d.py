@@ -10,7 +10,7 @@ all=cwr([i+1 for i in range(k)],n)
 
 aws=0
 for a in all:
-    result=[0]*k
+    result=[1]*k
 
     for i, coin in enumerate(a):
             result[coin-1]+=move[i]
