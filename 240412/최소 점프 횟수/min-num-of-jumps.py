@@ -32,6 +32,7 @@ for per in all_per:
 del all_com,all_per
 import sys
 del sys.modules['itertools']
+del sys.modules['sys']
 del cwr,permutations
 ##################################################
 # all_permu = []
