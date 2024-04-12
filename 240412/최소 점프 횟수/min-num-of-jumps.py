@@ -28,8 +28,10 @@ for per in all_per:
     per.append(2)
     all_permu.append(per)
 
-    
+
 del all_com,all_per
+import sys
+del sys.modules['itertools']
 del cwr,permutations
 ##################################################
 # all_permu = []
