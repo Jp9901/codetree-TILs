@@ -17,16 +17,18 @@ visited=[[False]*n for _ in range(n)]
 index_list=[i for i in range(n)]
 count=[]
 
-def dfs(x,y,cnt):
+def dfs(x,y):
+    graph[x][y]=0
+    visited[x][y]=True
     dxs,dys=[1,0,-1,0],[0,1,0,-1]
-    
+    cnt=1
+
     for dx, dy in zip(dxs,dys):
         nx, ny= x+dx, y+dy
         if 0 <= nx < n and 0 <= ny < n and graph[nx][ny]==1 and visited[nx][ny]==False:
-            graph[nx][ny]=0
-            visited[nx][ny]=True
             
-            cnt=dfs(nx,ny,cnt+1)
+            
+            cnt+=dfs(nx,ny)
 
     return cnt
 
@@ -35,7 +37,7 @@ for x in index_list:
     for y in index_list:
         if graph[x][y]==1 and not visited[x][y]:
             
-            a=dfs(x,y,0)
+            a=dfs(x,y)
             count.append(a)
 
 count.sort()
