@@ -14,27 +14,31 @@ move=list(map(int,input().split()))
 from itertools import permutations
 from itertools import combinations_with_replacement as cwr
 
-# all_com=cwr([0,1], n-1)
-# all_per=[]
-# for com in all_com:
-#     per=permutations(com,n-1)
-#     for per in per:
-#         if per[0]==1:
-#             all_per.append(per)
+all_com=cwr([0,1], n-1)
+all_per=[]
+for com in all_com:
+    per=permutations(com,n-1)
+    for per in per:
+        if per[0]==1:
+            all_per.append(per)
         
-# all_permu=[]
-# for per in all_per:
-#     per=list(per)
-#     per.append(2)
-#     all_permu.append(per)
+all_permu=[]
+for per in all_per:
+    per=list(per)
+    per.append(2)
+    all_permu.append(per)
 
-all_permu = []
-for i in range(2**(n-1)):
-    bin_list = [int(x) for x in bin(i)[2:].zfill(n-1)]
-    if bin_list[0] == 1:
-        bin_list.append(2)  # 도착 지점을 의미하는 2 추가
-        all_permu.append(bin_list)    
-# del all_com,all_per
+    
+del all_com,all_per
+del cwr,permutations
+##################################################
+# all_permu = []
+# for i in range(2**(n-1)):
+#     bin_list = [int(x) for x in bin(i)[2:].zfill(n-1)]
+#     if bin_list[0] == 1:
+#         bin_list.append(2)  # 도착 지점을 의미하는 2 추가
+#         all_permu.append(bin_list)
+####################################################
 
 aws=2*n
 for per in all_permu:      #[1,0,0,1,2]
