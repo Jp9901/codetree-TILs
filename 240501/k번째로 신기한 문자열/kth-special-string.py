@@ -6,7 +6,7 @@ k = int(k)
 words = list()
 for i in range(n):
     word = input()
-    if T in word:
+    if word.startswith(T):
         words.append(word)
 
 words.sort()
