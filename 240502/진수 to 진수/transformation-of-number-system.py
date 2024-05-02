@@ -5,7 +5,7 @@ n = list(input())
 digit_10 = 0
 
 for i in range(len(n)):
-    digit_10  += int(n[-i])*(8**i)
+    digit_10  += int(n[-i])*(a**i)
 
 # b진수
 digit_b = list()
