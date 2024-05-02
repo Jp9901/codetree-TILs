@@ -3,7 +3,6 @@ n = list(input())
 
 # a진수 -> 10진수
 digit_10 = 0
-
 for i in range(len(n)):
     digit_10  += int(n[-(i+1)])*(a**i)
 
