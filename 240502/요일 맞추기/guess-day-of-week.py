@@ -6,7 +6,7 @@ num_of_days = [0,31,28,31,30,31,30,31,31,30,31,30,31]
 elapsed_day = 0
 
 if m1 > m2 :
-    elapsed_day = d1+(num_of_days[m2]-d2)
+    elapsed_day = -(d1+(sum(num_of_days[m2:m1])-d2))
 elif m1 == m2:
     elapsed_day = d2-d1
 else:
