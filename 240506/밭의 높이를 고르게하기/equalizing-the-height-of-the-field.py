@@ -1,9 +1,11 @@
-n,h,t = map(int, input().split())
+import sys
 
+
+n,h,t = map(int, input().split())
 info = list(map(int,input().split()))
 
 
-min_cost = 200
+min_cost = sys.maxsize
 # 1 ~ (N-T)번째를 시작점으로
 for i in range(n-t+1):
     cost = 0
