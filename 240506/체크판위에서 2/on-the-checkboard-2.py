@@ -14,8 +14,8 @@ cnt = 0
 # 조건2 : 오른쪽과 아래쪽으로 한 칸 이상 점프 => 첫 + 마지막 행열 제외
 # 조건3 : 시작과 도착 점 외에 두 번만 이동
 # 첫번째 이동
-for i in range(r0,r-1):
-    for j in range(c0,c-1):
+for i in range(r0+1,r-1):
+    for j in range(c0+1,c-1):
 
         # 조건1 : 다른 색으로 이동
         if start != li[i][j]:
