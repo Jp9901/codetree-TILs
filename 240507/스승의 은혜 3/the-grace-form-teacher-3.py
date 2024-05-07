@@ -2,7 +2,7 @@ n, b = map(int,input().split())
 
 info = [list(map(int, input().split())) for _ in range(n)]
 
-info.sort(key=lambda x:(x[0]//2,x[1]))
+info.sort(key=lambda x:(sum(x),x[0]//2,x[1]))
 # print(info)
 
 # i번째 선물의 가격에 쿠폰
