@@ -12,14 +12,17 @@ for i in range(n):
     cost = info[i][0]//2 + info[i][1]
     cnt = 1
 
-    for j in range(n):
+    # i번째 선물을 제외한 새 리스트 => 합의 크기 순으로 정렬
+    new_info = [info[idx] for idx in range(n) if idx != i]
+    new_info.sort(key = lambda x:sum(x))
+
+    for j in range(n-1):
         # i번째 선물을 제외하고
         if i == j:
             continue
         # 나머지는 선물+배송비가 싼 순으로 하나씩 추가
-        # i번째 선물을 제외한 새 리스트 => 합의 크기 순으로 정렬
-        new_info = [info[idx] for idx in range(n) if idx != i]
-        new_info.sort(key = lambda x:sum(x))
+        
+        
         cost += sum(new_info[j])
 
         if cost > b:
