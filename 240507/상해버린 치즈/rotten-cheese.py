@@ -28,7 +28,8 @@ for i in range(m):
     # 아픈사람들이 먹지 않은 치즈
     if cheese[i] != s:
         continue
-        
+    
+    # i번째 치즈(상한 치즈)를 먹은 사람의 수
     cnt = 0
     for j in range(n):
         if info[j][i] != 0:
