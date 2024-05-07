@@ -2,26 +2,30 @@ n, b = map(int,input().split())
 
 info = [list(map(int, input().split())) for _ in range(n)]
 
-info.sort(key=lambda x:(sum(x),x[0]//2,x[1]))
+# info.sort(key=lambda x:(sum(x))
 # print(info)
 
 # i번째 선물의 가격에 쿠폰
 max_cnt = 0
 for i in range(n):
-    cost = 0
-    cnt = 0
+    # i번째 선물의 가격에 쿠폰
+    cost = info[i][0]//2 + info[i][1]
+    cnt = 1
+
     for j in range(n):
-        # i번째 선물의 가격에 쿠폰
+        # i번째 선물을 제외하고
         if i == j:
-            cost += info[j][0]//2 + info[j][1]
-        # 나머지는 그대로
-        else:
-            cost += sum(info[j])
-        # print(i,j,cost)
+            continue
+        # 나머지는 선물+배송비가 싼 순으로 하나씩 추가
+        # i번째 선물을 제외한 새 리스트 => 합의 크기 순으로 정렬
+        new_info = [info[idx] for idx in range(n) if idx != i]
+        new_info.sort(key = lambda x:sum(x))
+        cost += sum(new_info[j])
+
         if cost > b:
             break
         cnt += 1
-        # print(cnt)
+
     
     max_cnt= max(max_cnt,cnt)
 
