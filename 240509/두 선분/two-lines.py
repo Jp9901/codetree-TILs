@@ -2,7 +2,7 @@ x1,x2,x3,x4 = map(int,input().split())
 
 li = [0] * 101
 
-li[x1:(x2+1)] = [1]*(x2-x1)
+li[x1:(x2+1)] = [1]*(x2+1-x1)
 
 inter = False
 
