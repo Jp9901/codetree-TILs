@@ -36,7 +36,7 @@ for i in range(1, len(position)):
     btw_dist.append(abs(position[i]-position[i-1]))
 
 # 사이 거리가 홀수일 때,
-if max(btw_dist)%2 == 1:
+if max(btw_dist)%2 == 0:
     btw_max = max(btw_dist)//2
 # 짝수일 때
 else: 
