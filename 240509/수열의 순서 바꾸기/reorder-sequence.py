@@ -1,31 +1,19 @@
 n = int(input())
-li = list(map(int,input().split()))
+blocks = list(map(int, input().split()))
+  
+# 맨 뒤에 있는 숫자들이 
+# 정렬된 상태로 가장 길게 놓여져 있는 것이 좋습니다.
+# 예를 들어 1 3 6 5 2 4 7 라는 수열이 있다면
+# 2 4 7은 이미 정렬되어 있으므로
+# 앞에 있는 1 3 6 5만 각 위치에 잘 옮겨주면 됩니다.
+# 따라서 4가 됩니다.
 
-# 정렬된 수열
-li_sort = sorted(li)
+# 즉, 뒤에서부터 보며
+# 정렬되어 있지 않은 순간을 잡아
+# 그 앞에 있는 원소는 전부 옮겨주면 됩니다.
 
-# 정렬
-cnt = 0
-while li != li_sort:
-    first = li[0]
+idx = n - 2
+while idx >= 0 and blocks[idx] < blocks[idx + 1]:
+    idx -= 1
 
-    # 맨 앞 숫자가 수열의 최댓값이면
-    if first == max(li):
-        # 맨 뒤로 보낸다
-        li = li[1:] + [li[0]]
-
-    # 맨 앞 숫자가 수열의 최솟값이면
-    elif first == min(li):
-        # 최댓값 뒤로 보낸다.
-        max_idx = li.index(max(li))
-        li = li[1:(max_idx+1)] + [li[0]] + li[(max_idx+1):]
-
-    # 나머지 숫자는
-    else:
-        # 이전 수 뒤로 보낸다.
-        num_idx = li.index(first-1)
-        li = li[1:(num_idx+1)] + [li[0]] + li[(num_idx+1):]
-    
-    cnt += 1
-
-print(cnt)
+print(idx + 1)
