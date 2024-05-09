@@ -43,7 +43,7 @@ else:
     btw_max = (max(btw_dist)-1)//2
 
 # 최대 위치가 마지막에 위치할 때
-end_dist = n - position[-1]
+end_dist = (n-1) - position[-1]
 
 max_dist = max(btw_max, end_dist)
 print(max_dist)
