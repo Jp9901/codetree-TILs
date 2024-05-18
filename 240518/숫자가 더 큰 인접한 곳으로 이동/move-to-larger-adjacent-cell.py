@@ -31,5 +31,6 @@ while check_max(x,y):
         if arr[y][x] < arr[y2][x2]:
             val.append(arr[y2][x2])
             x,y = x2,y2
+            break
 
 print(*val)
