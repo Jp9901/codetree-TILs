@@ -10,12 +10,11 @@ def happy_seq(arr1):
             cnt += 1
             max_cnt = max(max_cnt,cnt)
             
-            if max_cnt >= m:
-                return 1
         else:
             cnt = 1
 
-        
+    if max_cnt >= m:
+                return 1
         
     return 0
 
