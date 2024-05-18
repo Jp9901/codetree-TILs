@@ -15,7 +15,7 @@ def check_max(x,y):
     for dx,dy in zip(next_x,next_y):
         x2,y2 = x+dx, y+dy
 
-        if x2 < 1 or x2 > n or y2 < 0 or y2 > n:
+        if x2 < 0 or x2 > (n-1) or y2 < 0 or y2 > (n-1):
             continue 
 
         if arr[y][x] < arr[y2][x2]:
@@ -25,7 +25,7 @@ def check_max(x,y):
 while check_max(x,y):
     for dx,dy in zip(next_x,next_y):
         x2,y2 = x+dx, y+dy
-        if x2 < 1 or x2 > n or y2 < 0 or y2 > n:
+        if x2 < 0 or x2 > (n-1) or y2 < 0 or y2 > (n-1):
             continue
 
         if arr[y][x] < arr[y2][x2]:
