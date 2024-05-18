@@ -11,7 +11,7 @@ for _ in range(t):
         arr[i] = arr[i-1]
     arr[0] = tmp
 
-arr1 = arr[0:3]
-arr2 = arr[3:]
+arr1 = arr[:n]
+arr2 = arr[n:]
 print(*arr1)
 print(*arr2)
