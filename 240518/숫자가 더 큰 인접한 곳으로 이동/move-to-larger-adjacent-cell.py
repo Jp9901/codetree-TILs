@@ -10,19 +10,19 @@ val = [arr[y][x]]
 next_x = [0,0,-1,1]
 next_y = [-1,1,0,0]
 
-# 큰 값이 존재하는지
-def check_max(x,y):
-    for dx,dy in zip(next_x,next_y):
-        x2,y2 = x+dx, y+dy
+# # 큰 값이 존재하는지
+# def check_max(x,y):
+#     for dx,dy in zip(next_x,next_y):
+#         x2,y2 = x+dx, y+dy
 
-        if x2 < 0 or x2 > (n-1) or y2 < 0 or y2 > (n-1):
-            continue 
+#         if x2 < 0 or x2 > (n-1) or y2 < 0 or y2 > (n-1):
+#             continue 
 
-        if arr[y][x] < arr[y2][x2]:
-            return True
-    return False
+#         if arr[y][x] < arr[y2][x2]:
+#             return True
+#     return False
 
-while check_max(x,y):
+while True: #check_max(x,y)
     for dx,dy in zip(next_x,next_y):
         x2,y2 = x+dx, y+dy
         if x2 < 0 or x2 > (n-1) or y2 < 0 or y2 > (n-1):
@@ -32,5 +32,7 @@ while check_max(x,y):
             val.append(arr[y2][x2])
             x,y = x2,y2
             break
+    else:
+        break   
 
 print(*val)
