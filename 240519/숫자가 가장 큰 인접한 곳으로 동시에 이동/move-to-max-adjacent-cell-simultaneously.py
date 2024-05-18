@@ -1,36 +1,3 @@
-n,m,t = tuple(map(int,input().split()))
-arr = [
-    list(map(int,input().split()))
-]
-count = [[0]*n for _ in range(n)]
-
-r_list = []
-c_list = []
-for _ in range(m):
-    r,c = tuple(map(int,input().split()))
-    r,c = r-1, c-1
-    count[r][c] += 1
-    r_list.append(r)
-    c_list.append(c)
-
-next_r = [-1,1,0,0]
-next_c = [0,0,-1,1]
-
-# 범위 확인
-def in_range(row,col):
-    return row >=0 and row <= (n-1) and col >= 0 and col <= (n-1)
-
-# 최댓값 위치 찾기
-def move_max(row,col):
-    val=[]
-    for dr,dc in zip(next_r,next_c):
-        if in_range(row_dr,col+dc):
-            val.append(arr[row+dr][col+dc])
-        else:
-            val.append(0)
-    max_idx = val.index(max(val))
-    return max_idx
-
 # 변수 선언 및 입력
 n, m, t = tuple(map(int, input().split()))
 a = [[0] * (n + 1)]
@@ -139,5 +106,3 @@ for i in range(1, n + 1):
         ans += count[i][j]
 
 print(ans)
-for _ in range(t):
-    for
