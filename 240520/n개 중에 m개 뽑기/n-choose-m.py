@@ -2,24 +2,21 @@ n,m = map(int,input().split())
 
 ans =[]
 
-# (이전 숫자 < 현재 숫자)인 개수
+# num : 조합 내 마지막 수(비어있을 때, 값 = 0)
 
 
-def choose(curr_num,cnt):
+def choose(curr_num,num):
     if curr_num == m+1:
-        # 한 조합 내에서 모든 숫자들이 오름차순으로 정렬되어 있을때,
-        if cnt == m:
-            print(*ans)
+        print(*ans)
         return
 
     for i in range(1,n+1):
-        ans.append(i)
-        # 오름차순 체크
-        if len(ans) == 1 or ans[-2] < ans[-1]:
-            choose(curr_num+1,cnt+1)
-        else:
-            choose(curr_num+1,cnt)
-        ans.pop()
+        # 조합 내 마지막 값과 i값 비교
+        # => i값이 더 크다면 재귀함수
+        if cnt < i :
+            ans.append(i)
+            choose(curr_num+1,i)
+            ans.pop()
     return
 
 choose(1,0)
