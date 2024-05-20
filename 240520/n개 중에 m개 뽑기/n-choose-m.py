@@ -15,10 +15,10 @@ def choose(curr_num,cnt):
     for i in range(1,n+1):
         ans.append(i)
         # 오름차순 체크
-        if len(ans) == 1 or ans[-2] <= ans[-1]:
-            cnt += 1
-            print(ans, cnt)
-        choose(curr_num+1,cnt)
+        if len(ans) == 1 or ans[-2] < ans[-1]:
+            choose(curr_num+1,cnt+1)
+        else:
+            choose(curr_num+1,cnt)
         ans.pop()
     return
 
