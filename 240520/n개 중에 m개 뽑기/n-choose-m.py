@@ -13,7 +13,7 @@ def choose(curr_num,num):
     for i in range(1,n+1):
         # 조합 내 마지막 값과 i값 비교
         # => i값이 더 크다면 재귀함수
-        if cnt < i :
+        if num < i :
             ans.append(i)
             choose(curr_num+1,i)
             ans.pop()
