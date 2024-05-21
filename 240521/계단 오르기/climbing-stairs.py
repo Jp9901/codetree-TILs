@@ -20,4 +20,4 @@ for i in range(4,n+1):
     if dp[n]==-1:
         dp[n]=0
 
-print(dp[n])
+print(dp[n]%10007)
