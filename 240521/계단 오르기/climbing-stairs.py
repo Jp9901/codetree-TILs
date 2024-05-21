@@ -10,6 +10,11 @@ dp[3]=1
 
 
 for i in range(4,n+1):
-    dp[n]=dp[n-2]+ dp[n-3]
+        dp[n]=dp[n-2]+ dp[n-3]
+    
 
-print(dp[n]%10007)
+if dp[n]==0:
+    print(0)
+else:
+
+    print(dp[n]%10007)
