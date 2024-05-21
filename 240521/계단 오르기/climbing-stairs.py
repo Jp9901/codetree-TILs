@@ -11,13 +11,6 @@ dp[3]=1
 
 
 for i in range(4,n+1):
-    if dp[n-2]!=0:
-        dp[n]=dp[n-2]+1  
-
-    if dp[n]==-1 and dp[n-3]!=0:
-        dp[n]=dp[n-3]+1 
-
-    if dp[n]==-1:
-        dp[n]=0
+    dp[n]=dp[n-2]+ dp[n-3]
 
 print(dp[n]%10007)
