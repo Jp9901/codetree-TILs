@@ -17,14 +17,18 @@ def dfs(x,y,graph):
 
     if x==n-1 and y==m-1:
         a=True
+    
+    else:
+        for dx,dy in zip(dxs,dys):
+            nx,ny=x+dx,y+dy
+            if can_go(nx,ny,graph):
+                visit[nx][ny]=True
+                dfs(nx,ny,graph)
+        a=False
+
          
 
-    for dx,dy in zip(dxs,dys):
-        nx,ny=x+dx,y+dy
-        if can_go(nx,ny,graph):
-            visit[nx][ny]=True
-            dfs(nx,ny,graph)
-    a=False
+    
 
 dfs(0,0,graph)
 
