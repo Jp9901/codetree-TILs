@@ -13,10 +13,10 @@ def can_go(x,y,graph):
 
 
 def dfs(x,y,graph):
-    global a
+    
 
     if x==n-1 and y==m-1:
-        a=True
+        return True
     
     else:
         for dx,dy in zip(dxs,dys):
@@ -24,15 +24,15 @@ def dfs(x,y,graph):
             if can_go(nx,ny,graph):
                 visit[nx][ny]=True
                 dfs(nx,ny,graph)
-        a=False
+        return False
 
          
 
     
 
-dfs(0,0,graph)
 
-if a:
+
+if dfs(0,0,graph):
     print(1)
 else:
     print(0)
