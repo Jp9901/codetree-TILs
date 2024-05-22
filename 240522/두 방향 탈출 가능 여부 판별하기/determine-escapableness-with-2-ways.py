@@ -6,7 +6,7 @@ visit[0][0]=True
 dxs,dys=[0,1],[1,0]
 
 def can_go(x,y,graph):
-    if 0<=x<n and 0<=y<m and graph[x][y]==1:
+    if 0<=x<n and 0<=y<m and graph[x][y]==1 and not visit[x][y]:
         return True
     else: 
         return False
