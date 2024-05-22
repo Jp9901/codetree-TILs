@@ -12,27 +12,23 @@ def can_go(x,y,graph):
         return False
 
 
-def dfs(x,y,graph):
+def dfs(x,y):
     
 
     if x==n-1 and y==m-1:
         return True
     
-    else:
-        for dx,dy in zip(dxs,dys):
-            nx,ny=x+dx,y+dy
-            if can_go(nx,ny,graph):
-                visit[nx][ny]=True
-                dfs(nx,ny,graph)
-        return False
+    
+    for dx,dy in zip(dxs,dys):
+        nx,ny=x+dx,y+dy
+        if can_go(nx,ny,graph):
+            visit[nx][ny]=True
+            dfs(nx,ny)
+    return False
 
          
 
-    
-
-
-
-if dfs(0,0,graph):
+if dfs(0,0):
     print(1)
 else:
     print(0)
