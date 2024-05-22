@@ -23,7 +23,8 @@ def dfs(x,y):
         nx,ny=x+dx,y+dy
         if can_go(nx,ny,graph):
             visit[nx][ny]=True
-            dfs(nx,ny)
+            if dfs(nx,ny):
+                return True
     return False
 
          
