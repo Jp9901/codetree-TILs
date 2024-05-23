@@ -14,6 +14,7 @@ def can_go(x,y,nx,ny,visit,start):
         return False
 
 
+
 def bfs(point):
     visit=set()
     visit.add(point)
@@ -35,6 +36,7 @@ def bfs(point):
                 
 
                 if graph[nx][ny]>graph[aws[0]][aws[1]]:          #갱신대상을 최소화한다. 좌표만 갱신하면 값은 자동으로 갱신됨
+                    graph[point[0]][point[1]]=start
                     aws=tuple([nx,ny])
 
                 elif graph[nx][ny]==graph[aws[0]][aws[1]]:       #두 좌표를 비교해야하는데
