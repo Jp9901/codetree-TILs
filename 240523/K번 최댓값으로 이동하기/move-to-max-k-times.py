@@ -1,8 +1,3 @@
-#출발점을 입력하면 도착점을 반환하는 bfs함수를 정의한다
-#bfs함수:
-
-#
-#bfs함수를 k번 반복한다. 
 n,k=tuple(map(int,input().split()))
 graph= [list(map(int,input().split())) for _ in range(n)]
 r,c=tuple(map(int,input().split()))
@@ -61,6 +56,8 @@ def bfs(point):
 p=tuple([r,c])
 for _ in range(k):
     p=bfs(p)
+    if p==p:
+        break
 
 print(p[0]+1,end=' ')
 print(p[1]+1)
