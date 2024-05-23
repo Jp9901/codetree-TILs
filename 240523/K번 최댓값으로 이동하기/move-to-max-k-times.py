@@ -62,5 +62,5 @@ p=tuple([r,c])
 for _ in range(k):
     p=bfs(p)
 
-print(p[0],end=' ')
-print(p[1])
+print(p[0]+1,end=' ')
+print(p[1]+1)
