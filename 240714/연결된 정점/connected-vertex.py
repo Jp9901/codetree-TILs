@@ -1,9 +1,6 @@
 n,m=tuple(map(int,input().split()))
 
-club=[]
-for i in range(n+1):
-    my_set={i}
-    club.append(my_set)
+club=[1]*(n+1)
 
 
 uf=[0]*(n+1)
@@ -19,13 +16,13 @@ def find(x):
 def union(x,y):
     X,Y=find(x),find(y)
     uf[X]=Y 
-    club[Y]|=club[X]
+    club[Y]+=club[X]
     #club[X]|=club[Y]
 
 
 def y(k):                #k와 연결되어 있는 노드의 개수 출력 
     mom=find(k)
-    print(len(club[mom]))
+    print(club[mom])
 
 
 for _ in range(m):
