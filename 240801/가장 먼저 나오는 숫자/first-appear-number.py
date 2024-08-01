@@ -16,7 +16,7 @@ def find(arr, target):
         else: 
             left=mid+1
             
-    if arr[idx]==target:
+    if idx<n and arr[idx]==target:
         return idx+1
     else:
         return -1
