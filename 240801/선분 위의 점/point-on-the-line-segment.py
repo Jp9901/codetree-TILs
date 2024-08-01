@@ -43,7 +43,7 @@ def upper(arr,target):
 for a,b in ab:
     low=lower(points,a)
     up=upper(points,b)
-    if low>=n or up<=-1:
+    if low>up:
         print(0)
         continue
     print(up-low+1)
