@@ -21,7 +21,7 @@ def find(arr, target):
     else:
         return -1
 
-for i in range(m):
-    target=targets[i]
-    a= find(arr,target)
+for i in targets:
+    
+    a= find(arr,i)
     print(a)
