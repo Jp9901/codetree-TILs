@@ -22,7 +22,7 @@ def lower(arr,target):
             right=mid-1
     #idx가 n-1보다 크거나 같으면 문제에 대한 답은 0
     #idx가 -1이면 제일 작은 점부터 선분에 포함된다는 뜻
-    return idx +1
+    return idx 
 
 def upper(arr,target): 
     left=0
@@ -37,7 +37,7 @@ def upper(arr,target):
             left=mid+1
     #idx가 n이면 제일 큰점부터 선분에 포함된다는 뜻
     #idx가 0보다 작거나 같으면 문제에 대한 답은 0
-    return idx-1
+    return idx
 
 
 
@@ -47,4 +47,4 @@ for a,b in ab:
     if low>up:
         print(0)
     else:
-        print(up-low+1)
+        print(up-low-1)
