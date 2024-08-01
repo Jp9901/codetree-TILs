@@ -7,6 +7,7 @@ for _ in range(m):
 #점들 중에서, 선분 ab에 포함되는 개수 찾기
 #-> a보다 작은 인덱스 중 max
 #-> b보다 큰  인덱스 중 min
+points.sort()
 
 def lower(arr,target): 
     left=0
