@@ -45,5 +45,5 @@ for a,b in ab:
     up=upper(points,b)
     if low>up:
         print(0)
-        continue
-    print(up-low+1)
+    else:
+        print(up-low+1)
