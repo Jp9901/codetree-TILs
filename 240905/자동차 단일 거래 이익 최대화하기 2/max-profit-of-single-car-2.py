@@ -23,4 +23,4 @@ else:
         ans=max(max(price)-min(small_p),ans)
         price=price[i+1:]
     
-print(ans)
+    print(ans)
