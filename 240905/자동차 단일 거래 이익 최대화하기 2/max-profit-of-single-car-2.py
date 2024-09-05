@@ -52,9 +52,10 @@ max_diff = 0
 
 # 리스트를 한 번만 순회하면서 계산
 for price in prices:
-    if price < min_price:
-        min_price = price  # 최소값 갱신
+    
+    min_price = min(min_price,price)  # 최소값 갱신
     current_diff = price - min_price  # 현재 값과 최소값의 차이 계산
+    
     max_diff=max(max_diff,current_diff)
 
 print(max_diff)
