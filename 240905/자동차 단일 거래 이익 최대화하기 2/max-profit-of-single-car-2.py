@@ -17,7 +17,7 @@ if sp==price:
     print(0)
 
 else:
-    while sum(price)!=0:   
+    while price!=[]:   
         i=price.index(max(price))
         small_p=price[:i]
         ans=max(max(price)-min(small_p),ans)
