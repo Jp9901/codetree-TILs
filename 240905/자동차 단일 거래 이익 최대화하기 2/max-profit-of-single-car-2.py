@@ -10,7 +10,7 @@ i=0
 #     print(0)
 
 # else:
-while price:   
+while len(price)!=0:   
         i=price.index(max(price))
         small_p=price[:i]
         ans=max(max(price)-min(small_p),ans)
