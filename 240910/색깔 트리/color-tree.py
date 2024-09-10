@@ -17,20 +17,6 @@ depths={}
 uf=[0]*100000
 nodes=set()   #모든 노드 저장
 
-#color[11]=1
-#color.pop(11)
-
-# def find(x):
-#     if uf[x]==x:
-#         return x
-#     uf[x]=find(uf[x])
-#     return uf(x)
-
-# def union(x,y):
-#     X,Y=find(x),find(y)
-#     if X!=Y:
-#         uf[X]=Y
-
 
 #x의 모든 부모 경로 집합을 계산하는 함수
 def find_mother(x):
@@ -81,13 +67,16 @@ def score():
 def check_d(m):
     count=2
     node=m
+    ch=set()
+    
 
     if depths[node]<2:
         return False
 
-    while uf[node]!=node:
+    while uf[node]!=node and (node not in ch):
         count+=1
         node=uf[node]
+        ch.add(node)
         if depths[node]<count:
             return False
 
@@ -111,9 +100,7 @@ def create(m_id,p_id,color,max_depth):
         depths[m_id]=max_depth
         colors[m_id]=color
 
-
-
-        
+    
 n=int(input())
 for _ in range(n):
     order=tuple(map(int,input().split()))
@@ -130,6 +117,5 @@ for _ in range(n):
         j,m_id=order
         what_color(m_id)
 
-    
     else:
         score()
