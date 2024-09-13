@@ -1,51 +1,50 @@
-#들어오는 간선이 없는 노드가 단 한개인것을 확인해서 루트노드를 찾는다
-# 루트노드에서 bfs를 실시한다 
+m = int(input())
 
-m=int(input())
-
-from collections import deque
-init=[0]*10000
-graph=[[] for _ in range(10000)]
-
-nodes=set()
-end=set()
+# 그래프 초기화 및 노드 정보
+graph = {}
+indegree = {}
+nodes = set()
 
 for _ in range(m):
-    a,b=tuple(map(int,input().split()))
+    a, b = map(int, input().split())
+    if a not in graph:
+        graph[a] = []
+    if a not in indegree:
+        indegree[a] = 0
+    if b not in indegree:
+        indegree[b] = 0
     graph[a].append(b)
-    nodes.add(a)
-    nodes.add(b)
-    end.add(b)
-    init[b]+=1
+    indegree[b] += 1
+    nodes.update([a, b])
 
+# 루트 노드 찾기
+root = None
+for node in nodes:
+    if indegree[node] == 0:
+        if root is not None:  # 두 번째 루트 발견 시 바로 0 출력
+            print(0)
+            exit()
+        root = node
 
-roots=nodes-end
-root=list(roots)[0]
-
-
-def bfs(graph):
-    visit=[False]*10000
-    visit[root]=True
-
-    q=deque()
-    q.append(root)
-
-    while q:
-        node=q.popleft()
-        nei=graph[node]
-        for n in nei:
-            if visit[n]==False:
-                q.append(n)
-                visit[n]=True
-
-    if sum(visit)==len(nodes):
-        return 1
-
-    else: 
-        return 0
-        
-
-if (len(roots)!=1) or m+1!=len(nodes):
+if root is None:  # 루트 노드가 없는 경우도 트리가 아님
     print(0)
+    exit()
+
+# BFS 실행하여 모든 노드 방문 확인
+visit = set()
+queue = [root]
+
+while queue:
+    current = queue.pop(0)
+    if current in visit:
+        continue
+    visit.add(current)
+    if current in graph:
+        for neighbor in graph[current]:
+            queue.append(neighbor)
+
+# 방문한 노드 수와 총 노드 수 비교
+if len(visit) == len(nodes):
+    print(1)
 else:
-    print(bfs(graph))
+    print(0)
