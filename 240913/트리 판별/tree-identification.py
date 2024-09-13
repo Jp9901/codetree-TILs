@@ -4,7 +4,7 @@
 m=int(input())
 
 from collections import deque
-
+init=[0]*10000
 graph=[[] for _ in range(10000)]
 
 nodes=set()
@@ -16,6 +16,7 @@ for _ in range(m):
     nodes.add(a)
     nodes.add(b)
     end.add(b)
+    init[b]+=1
 
 
 roots=nodes-end
@@ -44,7 +45,7 @@ def bfs(graph):
         return 0
         
 
-if len(roots)!=1:
+if (len(roots)!=1) or m+1!=len(nodes):
     print(0)
 else:
     print(bfs(graph))
