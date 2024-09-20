@@ -25,13 +25,15 @@ roots=list(nodes-end)
 
 if len(roots)!=1:
     check=False
-root=roots[0]
 
-nomal_nodes=nodes-set([root])
-nomal_nodes=list(nomal_nodes)
-for n in nomal_nodes:
-    if init[n]!=1:
-        check=False
+
+if len(roots)==1:
+    root=roots[0]
+    nomal_nodes=nodes-set([root])
+    nomal_nodes=list(nomal_nodes)
+    for n in nomal_nodes:
+        if init[n]!=1:
+            check=False
 
 
 #모든 노드에 대해서 dfs를 실시하여 루트노드에 도달할수있음을 확인
